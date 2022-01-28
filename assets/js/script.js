@@ -6,8 +6,8 @@ O load current date
 
 O initialize variable for tasks
 
-check local storage for saved tasks
-load saved tasks, if Any
+O check local storage for saved tasks
+O load saved tasks, if Any
 
 for each timeslot, color code according to past present future
 if timeslot is in past set the container to pink
@@ -57,7 +57,7 @@ var loadTasks = function () {
       fourPM: "",
       fivePM: "",
     };
-    saveTasks(tasks);
+    saveTasks();
   };
 };
 //END LOGIC FOR LOADING TASKS
@@ -66,9 +66,31 @@ var loadTasks = function () {
 var saveTasks = function() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   };
- // this sucessfully pushes to local storage:  saveTasks("thing");
+ // this sucessfully pushes to local storage:  
+ //gitsaveTasks("thing");
  //END FUNCTION TO PUSH TO LOCAL STORAGE
 
+
+ // START LOGIC FOR CLICK TO EDIT TASK FIELDS
+// $( "button" ).click(function() {
+//   console.log( "You clicked a paragraph!" );
+
+// });
+
+$( document ).ready(function(){
+ 
+  // Sets up click behavior on all button elements with the alert class
+  // that exist in the DOM when the instruction was executed
+  $( "button.savebutton" ).on( "click", function() {
+      console.log( "A button with the savebutton class was clicked!" );
+      var element = $( this ).attr("id");
+      var taskTextEl = '"' + element + "task" + '"';
+      var taskText = $( this ).attr( taskTextEl );
+      console.log(taskText);
+      console.log(taskTextEl);
+    });
+});
+//END LOGIC FOR CLICK TO EDIT TASK FIELDS
 
 
 // load tasks for the first time on page load
