@@ -2,9 +2,9 @@
 
 open page
 
-load current date
+O load current date
 
-initialize variable for tasks
+O initialize variable for tasks
 
 check local storage for saved tasks
 load saved tasks, if Any
@@ -19,35 +19,34 @@ text input for each timeslot containter, save task text to local storage when cl
 link save logic to save buttonws
 
 END pseudocode*/
+//------------------------------
+
 
 //initializing variable that stores tasks in local storage
-
 var tasks = {};
-// set variable for current day and push to index.html
-var today = new Date();
+
+
 
 //START LOGIC TO DISPLAY CURRENT DATE
+// set variable for current day and push to index.html
+var today = new Date();
 //var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 //date code from https://phoenixnap.com/kb/how-to-get-the-current-date-and-time-javascript
 var date = today.toLocaleDateString();
-
 //push var date to <p id="currentDay" class="lead"></p>
 document.getElementById("currentDay").innerHTML = date;
 //END LOGIC TO DISPLAY CURRENT DATE
 
 
-
-//TODO: slim this down for this assignment 
+//START LOGIC FOR LOADING TASKS
 var loadTasks = function () {
+  //get tasks object from local storage
   tasks = JSON.parse(localStorage.getItem("tasks"));
 
   // if nothing in localStorage, create a new object to track all task status arrays
   if (!tasks) {
+    //create a new object to track all task status arrays
     tasks = {
-/*       toDo: [],
-      inProgress: [],
-      inReview: [],
-      done: [], */
       nineAM: "",
       tenAM: "",
       elevenAM: "",
@@ -57,56 +56,22 @@ var loadTasks = function () {
       threePM: "",
       fourPM: "",
       fivePM: "",
-
     };
-  }
-
-//   for (const property in object) {
-//     console.log(`${property}: ${object[property]}`);
-//   }
-
-  // loop over object properties
-//   $.each(tasks, function (list, arr) {
-//     // then loop over sub-array
-//     arr.forEach(function (task) {
-
-//         //TODO: arrange this for this assignment
-//       createTask(task.text, task.date, list);
-//     });
-// //TODO
-// $.each(tasks, function())
-//   });
+    saveTasks(tasks);
+  };
 };
+//END LOGIC FOR LOADING TASKS
 
+//START FUNCTION TO PUSH TO LOCAL STORAGE
 var saveTasks = function() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   };
-  saveTasks("thing");
-var auditTask = function(taskEl) {
-  // get date from task element
-  var date = $(taskEl)
-    .find("span")
-    .text()
-    .trim();
+ // this sucessfully pushes to local storage:  saveTasks("thing");
+ //END FUNCTION TO PUSH TO LOCAL STORAGE
 
-  // convert to moment object at 5:00pm
-  var time = moment(date, "L").set("hour", 17);
 
-  // remove any old classes from element
-  $(taskEl).removeClass("list-group-item-warning list-group-item-danger");
 
-  // apply new class if task is near/over due date
-  if (moment().isAfter(time)) {
-    $(taskEl).addClass("list-group-item-danger");
-  } else if (Math.abs(moment().diff(time, "days")) <= 2) {
-    $(taskEl).addClass("list-group-item-warning");
-  }
-};
-
- 
-
-//TO DO: audit to make sure this works
-// load tasks for the first time
+// load tasks for the first time on page load
 loadTasks();
 
 //TO DO: update for this assignment
