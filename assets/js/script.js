@@ -25,7 +25,19 @@ END pseudocode*/
 //------------------------------
 
 //initializing variable that stores tasks in local storage
-var tasks = {};
+//if (!tasks) {
+  var tasks = {
+    nineAM: "write your task here",
+    tenAM: "write your task here",
+    elevenAM: "write your task here",
+    noon: "write your task here",
+    onePM: "write your task here",
+    twoPM: "write your task here",
+    threePM: "write your task here",
+    fourPM: "write your task here",
+    fivePM: "write your task here",
+  };
+//}
 
 //START LOGIC TO DISPLAY CURRENT DATE
 // set variable for current day and push to index.html
@@ -56,18 +68,18 @@ var loadTasks = function () {
       fourPM: "",
       fivePM: "",
     };
-
-    //document.getElementById("currentDay").innerHTML = date;
-    document.getElementById("nineAM").innerHTML = nineAM;
-    document.getElementById("tenAM").innerHTML = tenAM;
-    document.getElementById("elevenAM").innerHTML = elevenAM;
-    document.getElementById("noon").innerHTML = noon;
-    document.getElementById("onePM").innerHTML = onePM;
-    document.getElementById("twoPM").innerHTML = twoPM;
-    document.getElementById("threePM").innerHTML = threePM;
-    document.getElementById("fourPM").innerHTML = fourPM;
-    document.getElementById("fivePM").innerHTML = fivePM;
   }
+
+  //document.getElementById("currentDay").innerHTML = date;
+  document.getElementById("nineAMtask").innerHTML = tasks.nineAM;
+  document.getElementById("tenAMtask").innerHTML = tasks.tenAM;
+  document.getElementById("elevenAMtask").innerHTML = tasks.elevenAM;
+  document.getElementById("noontask").innerHTML = tasks.noon;
+  document.getElementById("onePMtask").innerHTML = tasks.onePM;
+  document.getElementById("twoPMtask").innerHTML = tasks.twoPM;
+  document.getElementById("threePMtask").innerHTML = tasks.threePM;
+  document.getElementById("fourPMtask").innerHTML = tasks.fourPM;
+  document.getElementById("fivePMtask").innerHTML = tasks.fivePM;
 };
 //END LOGIC FOR LOADING TASKS
 
@@ -82,27 +94,22 @@ var saveTasks = function () {
 $(document).ready(function () {
   // Sets up click behavior on all button elements with the savebutton class
   // that exist in the DOM when the instruction was executed
+
   $("button.savebutton").on("click", function () {
     //get id of element that created the click
     var element = $(this).attr("id");
-    console.log("element is", element);
     //add 'task' to the element name to get the name of the element to get textarea ID name
     var taskTextEl = element + "task";
-    console.log("taskTextEl is", taskTextEl);
 
-    //TODO: get text from input element
+    //get text from input element
     var taskText = document.getElementById(taskTextEl).innerHTML;
-    console.log("taskText is", taskText);
-
-    //TODO: set appropriate part of tasks object with the submitted task
-    //var settingTaskArray = "tasks." + element;
-    //  console.log(settingTaskArray);
+    console.log("this is the task text", taskText);
+    //set appropriate part of tasks object with the submitted task
 
     tasks[element] = taskText;
 
-    console.log(tasks[element]);
-    console.log(tasks);
     //TODO: save text to local storage
+    saveTasks();
   });
 });
 //END LOGIC FOR CLICK TO EDIT TASK FIELDS
