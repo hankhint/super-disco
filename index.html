@@ -11,8 +11,9 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
 
   <!--icon library-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
-  
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+
   <link rel="stylesheet" href="./css/style.css" />
   <title>Work Day Scheduler</title>
 </head>
@@ -27,48 +28,90 @@
   <div class="container">
 
     <!-- Timeblocks go here -->
-    <div >
-
+    <div class="row">
       <span class="btn btn-outline-warning btn-lg">9am</span>
-
       <p id="nineAMtask" contenteditable="true">
-        this is a task
+        9am task
       </p>
+   <button id="nineAM" class="btn btn-primary btn-lg savebutton oi oi-folder">save</button>
+    </div>
 
-        <button id="nineAM" class="btn btn-primary btn-lg savebutton oi oi-folder">save</button>
+    <div class="row">
+      <span class="btn btn-outline-warning btn-lg">10am</span>
+      <p id="tenAMtask" contenteditable="true">
+        10am task
+      </p>
+      <button id="tenAM" class="btn btn-primary btn-lg savebutton oi oi-folder">save</button>
+    </div>
+
+    <div class="row">
+
+      <span class="btn btn-outline-warning btn-lg">11am</span>
+
+      <p id="elevenAMtask" contenteditable="true">11am task</p>
+
+      <button id="elevenAM" class="btn btn-primary btn-lg savebutton oi oi-folder">save</button>
 
     </div>
 
-    <div id="tenAM">
-      <p class="btn btn-outline-warning btn-lg">10am</p>
+    <div class="row">
+
+      <span class="btn btn-outline-warning btn-lg">Noon</span>
+
+      <p id="noontask" contenteditable="true">Noon task</p>
+
+      <button id="noon" class="btn btn-primary btn-lg savebutton oi oi-folder">save</button>
+
     </div>
 
-    <div id="elevenAM">
-      <p class="btn btn-outline-warning btn-lg">11am</p>
+    <div class="row">
+
+      <span class="btn btn-outline-warning btn-lg">1pm</span>
+
+      <p id="onePMtask" contenteditable="true">1pm task</p>
+
+      <button id="onePM" class="btn btn-primary btn-lg savebutton oi oi-folder">save</button>
+
     </div>
 
-    <div id="noon">
-      <p class="btn btn-outline-warning btn-lg">Noon</p>
+    <div class="row">
+      <span class="btn btn-outline-warning btn-lg">2pm</span>
+
+
+      <p id="twoPMtask" contenteditable="true">2pm task</p>
+
+      <button id="twoPM" class="btn btn-primary btn-lg savebutton oi oi-folder">save</button>
+
     </div>
 
-    <div id="onePM">
-      <p class="btn btn-outline-warning btn-lg">9am</p>
+    <div class="row">
+
+      <span class="btn btn-outline-warning btn-lg">3pm</span>
+
+      <p id="threePMtask" contenteditable="true">3pm task</p>
+
+      <button id="threePM" class="btn btn-primary btn-lg savebutton oi oi-folder">save</button>
+
     </div>
 
-    <div id="twoPM">
-      <p class="btn btn-outline-warning btn-lg">9am</p>
+    <div class="row">
+
+      <span class="btn btn-outline-warning btn-lg">4pm</span>
+
+      <p id="fourPMtask" contenteditable="true">4pm task</p>
+
+      <button id="fourPM" class="btn btn-primary btn-lg savebutton oi oi-folder">save</button>
+
     </div>
 
-    <div id="threePM">
-      <p class="btn btn-outline-warning btn-lg">9am</p>
-    </div>
+    <div class="row">
+      <span class="btn btn-outline-warning btn-lg">5pm</span>
 
-    <div id="fourPM">
-      <p class="btn btn-outline-warning btn-lg">9am</p>
-    </div>
 
-    <div id="fivePM">
-      <p class="btn btn-outline-warning btn-lg">9am</p>
+      <p id="fivePMtask" contenteditable="true">5pm task</p>
+
+      <button id="fivePM" class="btn btn-primary btn-lg savebutton oi oi-folder">save</button>
+
     </div>
 
   </div>

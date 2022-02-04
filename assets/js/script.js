@@ -24,11 +24,8 @@ link save logic to save buttonws
 END pseudocode*/
 //------------------------------
 
-
 //initializing variable that stores tasks in local storage
 var tasks = {};
-
-
 
 //START LOGIC TO DISPLAY CURRENT DATE
 // set variable for current day and push to index.html
@@ -40,7 +37,6 @@ var date = today.toLocaleDateString();
 document.getElementById("currentDay").innerHTML = date;
 //END LOGIC TO DISPLAY CURRENT DATE
 
-
 //START LOGIC FOR LOADING TASKS
 var loadTasks = function () {
   //get tasks object from local storage
@@ -50,7 +46,7 @@ var loadTasks = function () {
   if (!tasks) {
     //create a new object to track all task status arrays
     tasks = {
-     nineAM: "",
+      nineAM: "",
       tenAM: "",
       elevenAM: "",
       noon: "",
@@ -60,7 +56,7 @@ var loadTasks = function () {
       fourPM: "",
       fivePM: "",
     };
-    
+
     //document.getElementById("currentDay").innerHTML = date;
     document.getElementById("nineAM").innerHTML = nineAM;
     document.getElementById("tenAM").innerHTML = tenAM;
@@ -71,57 +67,45 @@ var loadTasks = function () {
     document.getElementById("threePM").innerHTML = threePM;
     document.getElementById("fourPM").innerHTML = fourPM;
     document.getElementById("fivePM").innerHTML = fivePM;
-  };
+  }
 };
 //END LOGIC FOR LOADING TASKS
 
-
-
-
-
 //START FUNCTION TO PUSH TO LOCAL STORAGE
-var saveTasks = function() {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-  };
- //END FUNCTION TO PUSH TO LOCAL STORAGE
+var saveTasks = function () {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+};
+//END FUNCTION TO PUSH TO LOCAL STORAGE
 
+// START LOGIC FOR CLICK TO EDIT TASK FIELDS
 
- // START LOGIC FOR CLICK TO EDIT TASK FIELDS
-// $( "button" ).click(function() {
-//   console.log( "You clicked a paragraph!" );
-
-// });
-
-$( document ).ready(function(){
- 
+$(document).ready(function () {
   // Sets up click behavior on all button elements with the savebutton class
   // that exist in the DOM when the instruction was executed
-  $( "button.savebutton" ).on( "click", function() {
-  //    console.log( "A button with the savebutton class was clicked!" );
-      var element = $( this ).attr("id");
-//      var taskTextEl = '"' + element + "task" + '"';
-      var taskTextEl = element + "task";
+  $("button.savebutton").on("click", function () {
+    //get id of element that created the click
+    var element = $(this).attr("id");
+    console.log("element is", element);
+    //add 'task' to the element name to get the name of the element to get textarea ID name
+    var taskTextEl = element + "task";
+    console.log("taskTextEl is", taskTextEl);
 
-  var taskText = document.getElementById(taskTextEl).innerHTML
-      console.log(element);
-      console.log(taskTextEl);
-      //TODO: get text from input element
-      var taskText = document.getElementById(taskTextEl).innerHTML
-      console.log(taskText);
+    //TODO: get text from input element
+    var taskText = document.getElementById(taskTextEl).innerHTML;
+    console.log("taskText is", taskText);
 
-//TODO: set appropriate part of tasks array with the submitted task
-var settingTaskArray = "tasks." + element;
-console.log(settingTaskArray)     
+    //TODO: set appropriate part of tasks object with the submitted task
+    //var settingTaskArray = "tasks." + element;
+    //  console.log(settingTaskArray);
 
-tasks[element] = taskText;
+    tasks[element] = taskText;
 
-console.log(tasks);
-//TODO: save text to local storage
-
-    });
+    console.log(tasks[element]);
+    console.log(tasks);
+    //TODO: save text to local storage
+  });
 });
 //END LOGIC FOR CLICK TO EDIT TASK FIELDS
-
 
 // load tasks for the first time on page load
 loadTasks();
