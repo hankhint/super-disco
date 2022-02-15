@@ -40,15 +40,27 @@ var tasks = {};
 //   };
 // }
 
-//START LOGIC TO DISPLAY CURRENT DATE
-// set variable for current day and push to index.html
-var today = new Date();
-//var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-//date code from https://phoenixnap.com/kb/how-to-get-the-current-date-and-time-javascript
-var date = today.toLocaleDateString();
-//push var date to <p id="currentDay" class="lead"></p>
-document.getElementById("currentDay").innerHTML = date;
-//END LOGIC TO DISPLAY CURRENT DATE
+// //START LOGIC TO DISPLAY CURRENT DATE WITH JAVASCRIPT
+// // set variable for current day and push to index.html
+// var today = new Date();
+// //var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+// //date code from https://phoenixnap.com/kb/how-to-get-the-current-date-and-time-javascript
+// var date = today.toLocaleDateString();
+// //push var date to <p id="currentDay" class="lead"></p>
+// document.getElementById("currentDay").innerHTML = date;
+// //END LOGIC TO DISPLAY CURRENT DATE WITH JAVASCRIPT
+
+var DateTime = luxon.DateTime;
+console.log("DateTime is", DateTime)
+var currentDateAndTime = DateTime.now();
+console.log("currentDateAndTime is", currentDateAndTime)
+
+//display current date under main title
+function currentDate() {
+    var fullDate = currentDateAndTime.toLocaleString(DateTime.DATE_HUGE);
+    console.log("full date is", fullDate)
+ document.getElementById("currentDay").innerHTML = fullDate;
+};
 
 //START LOGIC FOR LOADING TASKS
 var loadTasks = function () {
@@ -126,3 +138,5 @@ setInterval(function () {
   });
   //
 }, 1800000);
+
+currentDate();
