@@ -23,21 +23,22 @@ link save logic to save buttonws
 
 END pseudocode*/
 //------------------------------
-
+var tasks = {};
 //initializing variable that stores tasks in local storage
-//if (!tasks) {
-  var tasks = {
-    nineAM: "write your task here",
-    tenAM: "write your task here",
-    elevenAM: "write your task here",
-    noon: "write your task here",
-    onePM: "write your task here",
-    twoPM: "write your task here",
-    threePM: "write your task here",
-    fourPM: "write your task here",
-    fivePM: "write your task here",
-  };
-//}
+//TODO: does it exist in local storage
+// if (!tasks) {
+ // var tasks = {
+    // nineAM: "write your task here",
+    // tenAM: "write your task here",
+    // elevenAM: "write your task here",
+    // noon: "write your task here",
+    // onePM: "write your task here",
+    // twoPM: "write your task here",
+    // threePM: "write your task here",
+    // fourPM: "write your task here",
+    // fivePM: "write your task here",
+//   };
+// }
 
 //START LOGIC TO DISPLAY CURRENT DATE
 // set variable for current day and push to index.html
@@ -58,15 +59,15 @@ var loadTasks = function () {
   if (!tasks) {
     //create a new object to track all task status arrays
     tasks = {
-      nineAM: "",
-      tenAM: "",
-      elevenAM: "",
-      noon: "",
-      onePM: "",
-      twoPM: "",
-      threePM: "",
-      fourPM: "",
-      fivePM: "",
+      nineAM: "write your task here",
+      tenAM: "write your task here",
+      elevenAM: "write your task here",
+      noon: "write your task here",
+      onePM: "write your task here",
+      twoPM: "write your task here",
+      threePM: "write your task here",
+      fourPM: "write your task here",
+      fivePM: "write your task here",
     };
   }
 
