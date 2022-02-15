@@ -5,14 +5,14 @@
 This is a tool that allows you to save items into a schedule made up of hour-long time blocks.  The saved items persist after you reload the page.
 
 # Table of Contents 
-* [Installation](#installation)
+## [TechUsed](#TechUsed)
 * [Usage](#usage)
 * [License](#license)
 * [Contributing](#contributing)
-* [Tests](#tests)
 * [Questions](#questions)
+* [DeployedSite](#DeployedSite)
 
-## Technology Used
+## TechUsed
 
 This project uses 
 * luxon https://moment.github.io/luxon/#/ 
@@ -29,7 +29,7 @@ The application uses the MIT license.
 ## Contributing
 Fork if you would like to contribute.
 
-## Deployed Site
+## DeployedSite
 
 https://hankhint.github.io/super-disco/
 
