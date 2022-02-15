@@ -36,4 +36,4 @@ https://hankhint.github.io/super-disco/
 ## Screenshots
 ![workday](https://user-images.githubusercontent.com/50533231/154150871-784dde08-fae1-4318-8917-10c79e03b570.png)
 ## Questions
-Send questions or comments to hankhint@gmail.com and find me on github https://github.com/hankhint
+Send questions or comments to hankhint art geeemail and find me on github https://github.com/hankhint
