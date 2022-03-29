@@ -31,7 +31,7 @@ The application uses the MIT license.
 Fork if you would like to contribute.
 
 ## DeployedSite
-https://hankhint.github.io/super-disco/
+https://hankhint.github.io/workday-scheduler/
 
 ## Screenshots
 ![workday](https://user-images.githubusercontent.com/50533231/154150871-784dde08-fae1-4318-8917-10c79e03b570.png)
